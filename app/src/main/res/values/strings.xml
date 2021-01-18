@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MoviewMVVM</string>
+    <string name="connection_error">Connection Error</string>
+    <string name="movie">Movie</string>
+    <string name="sub_title">Sub Title</string>
+    <string name="release_date">Release Date:</string>
+    <string name="ratings">Ratings:</string>
+    <string name="runtime">Runtime:</string>
+    <string name="revenue">Revenue</string>
+    <string name="overview">OverView</string>
+</resources>
