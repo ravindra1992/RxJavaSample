@@ -1,5 +1,7 @@
 package com.example.moviewmvvm.data.api
 
+import com.example.moviewmvvm.data.api.NetworkState.Companion.ENDOFLIST
+
 enum class Status{
 
     RUNNING,
@@ -15,12 +17,16 @@ class NetworkState(val status: Status, val msg:String) {
         val LOADED: NetworkState
         val LOADING:NetworkState
         val ERROR:NetworkState
+        val ENDOFLIST:NetworkState
 
         init {
 
             LOADED= NetworkState(Status.SUCCESS, "Success")
             LOADING= NetworkState(Status.RUNNING, "Running")
             ERROR= NetworkState(Status.FAILED, "Something went wrong")
+            ENDOFLIST= NetworkState(Status.FAILED, "you have reached the end")
+
+
         }
     }
 

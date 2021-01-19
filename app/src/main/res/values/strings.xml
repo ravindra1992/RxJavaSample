@@ -8,4 +8,5 @@
     <string name="runtime">Runtime:</string>
     <string name="revenue">Revenue</string>
     <string name="overview">OverView</string>
+    <string name="connection_problem">Connection Problem!</string>
 </resources>

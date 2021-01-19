@@ -11,18 +11,19 @@ import java.util.concurrent.TimeUnit
 const val API_KEY= "8074bc83ecdbee8568e0b2cc243a6c6f"
 const val BASE_URL= "https://api.themoviedb.org/3/"
 const val POSTER_BASE_URL= "https://image.tmdb.org/t/p/w342/"
+const val FIRST_PAGE=1
+const val POST_PER_PAGE=20
 
 object MovieDbClient {
+
     fun getClient(): MovieDb{
         val requestInterceptor= Interceptor{chain ->
-           // interceptor take only one argument which is lamda functions
+            // interceptor take only one argument which is lamda functions
             val url= chain.request().url().newBuilder().addQueryParameter("api_key", API_KEY).build()
-
             val request= chain.request().newBuilder().url(url).build()
-
             return@Interceptor chain.proceed(request)
 
-        }
+    }
 
         val okHttpClient= OkHttpClient.Builder().addInterceptor(requestInterceptor).
                 connectTimeout(60, TimeUnit.SECONDS)
@@ -35,5 +36,5 @@ object MovieDbClient {
             .build()
             .create(MovieDb::class.java)
 
-               }
+        }
 }

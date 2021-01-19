@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.example.moviewmvvm.ui.single_movie.SingleMovie"></activity>
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.popular_movies.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
