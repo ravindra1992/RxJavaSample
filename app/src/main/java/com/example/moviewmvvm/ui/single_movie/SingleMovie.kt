@@ -28,8 +28,7 @@ class SingleMovie : AppCompatActivity() {
         setContentView(R.layout.activity_single_movie)
         val movieId:Int= intent.getIntExtra("id", 1)
         val apiService: MovieDb= MovieDbClient.getClient()
-        movieRepository=
-            MovieDetailsRepo(apiService)
+        movieRepository= MovieDetailsRepo(apiService)
         viewModel=getViewModel(movieId)
         viewModel.movieDetails.observe(this, androidx.lifecycle.Observer {
             bindUI(it)
@@ -64,7 +63,6 @@ class SingleMovie : AppCompatActivity() {
 
 
     private fun getViewModel(movieID:Int): SingleMovieViewModel {
-
         return ViewModelProviders.of(this, object :ViewModelProvider.Factory{
           override  fun <T:ViewModel?> create(modelclass:Class<T>):T{
                 return SingleMovieViewModel(
